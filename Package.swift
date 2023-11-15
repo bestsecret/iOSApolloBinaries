@@ -8,13 +8,13 @@ let package = Package(
     products: [
     .library(
       name: "ApolloLegacyCore",
-      targets: ["ApolloLegacyCore"]),
+      targets: ["ApolloCore"]),
     .library(
       name: "ApolloLegacy",
-      targets: ["ApolloLegacy"]),
+      targets: ["Apollo"]),
     .library(
       name: "ApolloLegacyCodegenLib",
-      targets: ["ApolloLegacyCodegenLib"]),
+      targets: ["ApolloCodegenLib"]),
     ],
     dependencies: [
     .package(
@@ -26,21 +26,18 @@ let package = Package(
     ],
     targets: [
     .target(
-        name: "ApolloLegacyCore",
-        dependencies: [],
-        path: "ApolloCore"),
+        name: "ApolloCore",
+        dependencies: []),
     .target(
-      name: "ApolloLegacy",
+      name: "Apollo",
       dependencies: [
-        "ApolloLegacyCore",
-      ],
-      path: "Apollo"),
+        "ApolloCore",
+      ]),
     .target(
-      name: "ApolloLegacyCodegenLib",
+      name: "ApolloCodegenLib",
       dependencies: [
-        "ApolloLegacyCore",
+        "ApolloCore",
         .product(name: "Stencil", package: "Stencil"),
-      ],
-      path: "ApolloCodegenLib")
+      ])
     ]
 )
