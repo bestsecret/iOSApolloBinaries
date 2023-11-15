@@ -29,7 +29,7 @@ let package = Package(
     dependencies: [
     .package(
       url: "https://github.com/stephencelis/SQLite.swift.git",
-      .upToNextMinor(from: "0.12.2")),
+      .upToNextMinor(from: "0.13.1")),
     .package(
       url: "https://github.com/daltoniam/Starscream",
       .upToNextMinor(from: "3.1.1")),
