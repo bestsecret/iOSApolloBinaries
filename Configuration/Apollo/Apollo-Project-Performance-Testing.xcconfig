@@ -1,0 +1,5 @@
+#include "../Shared/Project-Release.xcconfig"
+
+COPY_PHASE_STRIP = NO
+ENABLE_BITCODE = NO
+ENABLE_TESTABILITY = YES
