@@ -7,13 +7,13 @@ let package = Package(
     name: "ApolloLegacy",
     products: [
     .library(
-      name: "ApolloLegacyCore",
+      name: "ApolloCore",
       targets: ["ApolloLegacyCore"]),
     .library(
-      name: "ApolloLegacy",
+      name: "Apollo",
       targets: ["ApolloLegacy"]),
     .library(
-      name: "ApolloLegacyCodegenLib",
+      name: "ApolloCodegenLib",
       targets: ["ApolloLegacyCodegenLib"]),
     ],
     dependencies: [
