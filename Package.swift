@@ -4,27 +4,27 @@
 import PackageDescription
 
 let package = Package(
-    name: "Apollo",
+    name: "ApolloLegacy",
     products: [
     .library(
-      name: "ApolloCore",
-      targets: ["ApolloCore"]),
+      name: "ApolloLegacyCore",
+      targets: ["ApolloLegacyCore"]),
     .library(
-      name: "Apollo",
-      targets: ["Apollo"]),
+      name: "ApolloLegacy",
+      targets: ["ApolloLegacy"]),
     .library(
-        name: "Apollo-Dynamic",
+        name: "ApolloLegacy-Dynamic",
         type: .dynamic,
-        targets: ["Apollo"]),
+        targets: ["ApolloLegacy"]),
     .library(
-      name: "ApolloCodegenLib",
-      targets: ["ApolloCodegenLib"]),
+      name: "ApolloLegacyCodegenLib",
+      targets: ["ApolloLegacyCodegenLib"]),
     .library(
-        name: "ApolloSQLite",
-        targets: ["ApolloSQLite"]),
+        name: "ApolloLegacySQLite",
+        targets: ["ApolloLegacySQLite"]),
     .library(
-        name: "ApolloWebSocket",
-        targets: ["ApolloWebSocket"]),
+        name: "ApolloLegacyWebSocket",
+        targets: ["ApolloLegacyWebSocket"]),
     ],
     dependencies: [
     .package(
@@ -39,89 +39,89 @@ let package = Package(
     ],
     targets: [
       .target(
-        name: "ApolloCore",
+        name: "ApolloLegacyCore",
         dependencies: []),
     .target(
-      name: "Apollo",
+      name: "ApolloLegacy",
       dependencies: [
-        "ApolloCore",
+        "ApolloLegacyCore",
       ]),
     .target(
-      name: "ApolloCodegenLib",
+      name: "ApolloLegacyCodegenLib",
       dependencies: [
-        "ApolloCore",
+        "ApolloLegacyCore",
         .product(name: "Stencil", package: "Stencil"),
       ]),
     .target(
-      name: "ApolloSQLite",
+      name: "ApolloLegacySQLite",
       dependencies: [
-        "Apollo",
+        "ApolloLegacy",
         .product(name: "SQLite", package: "SQLite.swift"),
       ]),
     .target(
-      name: "ApolloSQLiteTestSupport",
+      name: "ApolloLegacySQLiteTestSupport",
       dependencies: [
-        "ApolloSQLite",
-        "ApolloTestSupport"
+        "ApolloLegacySQLite",
+        "ApolloLegacyTestSupport"
       ]),
     .target(
-      name: "ApolloWebSocket",
+      name: "ApolloLegacyWebSocket",
       dependencies: [
-        "Apollo",
-        "ApolloCore",
+        "ApolloLegacy",
+        "ApolloLegacyCore",
         .product(name: "Starscream", package: "Starscream"),
       ]),
     .target(
-      name: "ApolloTestSupport",
+      name: "ApolloLegacyTestSupport",
       dependencies: [
-        "Apollo",
+        "ApolloLegacy",
       ]),
     .target(
       name: "GitHubAPI",
       dependencies: [
-        "Apollo",
+        "ApolloLegacy",
       ]),
     .target(
-      name: "StarWarsAPI",
+      name: "StarWarsLegacyAPI",
       dependencies: [
-        "Apollo",
+        "ApolloLegacy",
       ]),
     .target(
-      name: "UploadAPI",
+      name: "UploadLegacyAPI",
       dependencies: [
-        "Apollo",
+        "ApolloLegacy",
       ]),
     .testTarget(
-      name: "ApolloTests",
+      name: "ApolloLegacyTests",
       dependencies: [
-        "ApolloTestSupport",
-        "StarWarsAPI",
-        "UploadAPI"
+        "ApolloLegacyTestSupport",
+        "StarWarsLegacyAPI",
+        "UploadLegacyAPI"
       ]),
     .testTarget(
-      name: "ApolloCacheDependentTests",
+      name: "ApolloLegacyCacheDependentTests",
       dependencies: [
-        "ApolloSQLiteTestSupport",
-        "StarWarsAPI",
+        "ApolloLegacySQLiteTestSupport",
+        "StarWarsLegacyAPI",
       ]),
     .testTarget(
-      name: "ApolloCodegenTests",
+      name: "ApolloLegacyCodegenTests",
       dependencies: [
-        "ApolloTestSupport",
-        "ApolloCodegenLib"
+        "ApolloLegacyTestSupport",
+        "ApolloLegacyCodegenLib"
       ]),
     .testTarget(
       name: "ApolloSQLiteTests",
       dependencies: [
-        "ApolloSQLiteTestSupport",
-        "StarWarsAPI"
+        "ApolloLegacySQLiteTestSupport",
+        "StarWarsLegacyAPI"
       ]),
     .testTarget(
-      name: "ApolloWebsocketTests",
+      name: "ApolloLegacyWebsocketTests",
       dependencies: [
-        "ApolloWebSocket",
-        "ApolloTestSupport",
-        "StarWarsAPI",
+        "ApolloLegacyWebSocket",
+        "ApolloLegacyTestSupport",
+        "StarWarsLegacyAPI",
       ]),
     ]
 )
